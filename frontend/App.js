@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://ai-learning-agent-yw53.onrender.com";
 const TOPICS = [
   "data science", "data preprocessing", "EDA", "statistics", "visualization", 
   "feature engineering", "supervised learning", "unsupervised learning", 
@@ -263,4 +263,5 @@ export default function App() {
       )}
     </div>
   );
+
 }
