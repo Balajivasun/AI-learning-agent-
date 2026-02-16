@@ -6,6 +6,11 @@ from langchain_groq import ChatGroq
 # Load .env variables (GROQ_API_KEY, LANGCHAIN_API_KEY, etc.)
 load_dotenv()
 
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
+os.environ["LANGCHAIN_PROJECT"] = "MentorFlow-Learning-Agent"
+
+
 # Initialize LLM - it will automatically use LangSmith tracing since it's in your .env
 llm = ChatGroq(
     model="llama-3.1-8b-instant", 
@@ -76,4 +81,5 @@ def reteach(topic):
     # CLEANING: Remove the bold markdown symbols
     clean_reteach = res.replace("**", "")
     
+
     return clean_reteach
